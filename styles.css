@@ -1,0 +1,295 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    animation: fadeIn 1s ease-in-out; /* Fade in the whole page */
+  }
+  
+  /* Fade-in animation for the page */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  #status {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    animation: slideIn 0.5s ease-out; /* Slide-in effect for status */
+  }
+  
+  /* Slide-in animation for the status */
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Tic-Tac-Toe board styling */
+  #game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    animation: scaleUp 0.5s ease-out; /* Scale-up animation for the board */
+  }
+  
+  /* Scale-up animation for the board */
+  @keyframes scaleUp {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Each cell in the Tic-Tac-Toe grid */
+  .cell {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: top;
+    line-height: 100px;
+    font-size: 32px;
+    border: 2px solid #333;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for smooth hover effect */
+    animation: fadeInCell 0.3s ease-out; /* Fade-in for each cell */
+  }
+  
+  /* Fade-in animation for each cell */
+  @keyframes fadeInCell {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Highlight the cell when it's selected */
+  .selected {
+    background-color: #f39c12; /* Yellow background for selected mark */
+    animation: pulse 0.5s infinite alternate; /* Pulse effect for selected cells */
+  }
+  
+  /* Pulse animation for selected cell */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Highlight the target empty cell */
+  .target {
+    background-color: #27ae60; /* Green background for target empty cell */
+    animation: targetGlow 0.8s ease-in-out infinite alternate; /* Glow effect for target cells */
+  }
+  
+  /* Glow animation for the target cell */
+  @keyframes targetGlow {
+    0% {
+      box-shadow: 0 0 10px #27ae60;
+    }
+    100% {
+      box-shadow: 0 0 20px #27ae60;
+    }
+  }
+  
+  /* Styling for the restart button */
+  #restartBtn {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added smooth transform */
+    animation: fadeInBtn 1s ease-out; /* Button fade-in effect */
+  }
+  
+  /* Fade-in animation for restart button */
+  @keyframes fadeInBtn {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Hover effect for restart button */
+  #restartBtn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05); /* Slight scaling effect on hover */
+  }
+  
+  /* Add a nice shadow and hover effect on the board for better user experience */
+  #game-board:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    #game-board {
+      grid-template-columns: repeat(3, 80px);
+      grid-template-rows: repeat(3, 80px);
+      gap: 4px;
+    }
+  
+    .cell {
+      font-size: 24px;
+      line-height: 80px;
+    }
+  
+    #restartBtn {
+      font-size: 16px;
+      padding: 8px;
+    }
+  }
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+  }
+  
+  #status {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  /* Tic-Tac-Toe board styling */
+  #game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* Each cell in the Tic-Tac-Toe grid */
+  .cell {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: top;
+    line-height: 100px;
+    font-size: 32px;
+    border: 2px solid #333;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Highlight the cell when it's selected */
+  .selected {
+    background-color: #f39c12; /* Yellow background for selected mark */
+  }
+  
+  /* Highlight the target empty cell */
+  .target {
+    background-color: #27ae60; /* Green background for target empty cell */
+  }
+  
+  /* Styling for the restart button */
+  #restartBtn {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for restart button */
+  #restartBtn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Add a nice shadow and hover effect on the board for better user experience */
+  #game-board {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Style the game board and its cells */
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  /* Visual feedback on hover over empty cells */
+  .cell:hover {
+    background-color: #ecf0f1;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    #game-board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 4px;
+    }
+  
+    .cell {
+        font-size: 24px;
+        line-height: 80px;
+    }
+  
+    #restartBtn {
+        font-size: 16px;
+        padding: 8px;
+    }
+  }
+    
